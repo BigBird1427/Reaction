@@ -1,0 +1,81 @@
+
+<html>
+<head>
+    <title>Reaction</title>
+    <style>
+      body {
+        background: #202028;
+        color: #fff;
+        font-family: aerial;
+        text-align:center;
+      }
+      canvas {
+        border: solid 1vh #fff;
+        height: 80%;
+      }
+      input{
+        width: 14%;
+        height: 10%;
+      }
+    </style>
+
+    <link rel="stylesheet" href="interact.css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="touch" id="touchL" ontouchstart="touchleft()"></div>
+    <div class="touch" id="touchR" ontouchstart="touchright()"></div>
+    <div class="touch" id="touchTL" ontouchstart="touchtopleft()"></div>
+    <div class="touch" id="touchTR" ontouchstart="touchtopright()"></div>
+    <audio preload="autoplay" class="audio" controls autoplay id="bgmusic">
+    <source src="MainTheme.mp3" type="audio/mpeg">
+    </audio>
+    <audio  id="error">
+    <source src="error.mp3" type="audio/mpeg">
+    </audio>
+    <audio  id="points">
+    <source src="points.mp3" type="audio/mpeg">
+    </audio>
+    <audio  id="boot">
+    <source src="boot.mp3" type="audio/mpeg">
+    </audio>
+    <audio  id="click">
+    <source src="click.mp3" type="audio/mpeg">
+    </audio>
+    <label class="switch" id="audio">
+      <input type="checkbox" onchange="toggleMusic()">
+      <span class="slider round"></span>
+    </label>
+    <label class="switch" id="effects">
+      <input type="checkbox" onchange="toggleEffects()">
+      <span class="slider"></span>
+    </label>
+    <input type="button" class="button" value="Play" id="play" onClick=gamemode=1;p=0;boot=1;blink=0;hideAll();>
+    <input type="button" class="button" value="Blue" id="blue" onClick=rightwall="#0000FF";blink=0;>
+    <input type="button" class="button" value="Green" id="green" onClick=rightwall="#00ff00";blink=0;>
+    <input type="button" class="button" value="Megenta" id="megenta" onClick=rightwall="#cc00cc";blink=0;>
+    <input type="button" class="button" value="Red" id="red" onClick=leftwall="#FF0000";blink=0;>
+    <input type="button" class="button" value="Orange" id="orange" onClick=leftwall="#ff8000";blink=0;>
+    <input type="button" class="button" value="Yellow" id="yellow" onClick=leftwall="#ffff00";blink=0;>
+    <input type="button" class="button" value="Settings" id="settings" onClick=gamemode=-1;blink=0;hideAll();>
+    <input type="button" class="button" value="Back" id="homescreen" onClick=gamemode=0;blink=0;hideAll();>
+    <input type="button" class="button" value="Back" id="homescreenS" onClick=gamemode=0;blink=0;hideAll();>
+    <input type="button" class="button" value="Restart" id="restart" onClick=restart=1;blink=0;>
+    <input type="button" class="button" value="Orginal" id="mode1" onClick=gamemode=1;restart=1;increase=1;blink=0;>
+    <input type="button" class="button" value="Doubles" id="mode2" onClick=gamemode=2;increase=1;restart=1;blink=0;>
+
+    <div class="text" id="cred"></div>
+    <div class="text" id="score"></div>
+    <div class="text" id="Screen"></div>
+    <div class="text" id="Right"></div>
+    <div class="text" id="Left"></div>
+    <div class="text" id="Audio"></div>
+    <div class="text" id="Effects"></div>
+
+    <canvas id="react" width="1000" height="1000" />
+    <script src="react.js">
+    </script>
+</body>
+</html>
+

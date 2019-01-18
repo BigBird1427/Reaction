@@ -1,0 +1,89 @@
+/*class for the 4 quadrants of touch screen without assigning color makes it invisible don't use opacity*/
+.touch {
+  width: 50%;
+  height: 50%;
+  transition: all 0.3s;
+  position: absolute;
+}
+/*All customization for the buttons in terms of graphics*/
+.button{
+  /*background-image: linear-gradient(#44dd88, #2eb489);*/
+  background-image: linear-gradient(to top left,#33cccc, #0099ff);
+ /* background-image: linear-gradient(#9900ff, #9999ff);*/
+  background-color:#44dd88;
+  border-radius: 12px;
+  cursor: pointer;
+  color: white;
+  font-family: "Helvetica";
+  font-weight: 200;
+  font-size:6vh;
+  padding: 0px;
+  position: absolute;
+  visibility: hidden;
+}
+.button:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.text{
+  visibility:hidden;
+  position:absolute;
+  font-family: "Helvetica";
+  font-size:5.5vh;
+  height: 10vh;
+}
+
+/*The switches for audio/effects*/
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 14%;
+  height: 10%;
+}
+.switch:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.switch input {display:none;}
+/*The moving part for the slider box*/
+.slider {
+  content:"";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: gray;
+  transition: .4s;
+  color:black;
+  border-radius: 34px;
+
+}
+/*Slider customization*/
+.slider:before {
+  content:"";
+  border-radius: 50%;
+  position: absolute;
+  height: 90%;
+  width: 35%;
+  left: 2%;
+  bottom: 6%;
+  color:white;
+  background-color: white;
+  transition: .4s;
+  color:white;
+}
+/*Background of the switch*/
+input:checked + .slider {
+  background-image: linear-gradient(to top left,#33cccc, #0099ff);
+  content:"";
+}
+/*Background of the switch*/
+input:focus + .slider {
+  background-color: gray;
+  content:"";
+}
+/*The movement of the slider*/
+input:checked + .slider:before {
+  transform: translateX(175%);
+  content:"";
+}
